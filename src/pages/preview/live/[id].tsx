@@ -32,6 +32,8 @@ type Page = Entry<PageSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 export default function Home({ page }: { page: Page }) {
   const updatedPage = useContentfulLiveUpdates(page);
 
+  console.log("slug fields", updatedPage.fields.slug);
+
   return (
     <>
       <p>Slug: {updatedPage.fields.slug?.fields.slug}</p>
